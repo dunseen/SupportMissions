@@ -3,6 +3,14 @@ const User = require('../models/User');
 
 module.exports = {
 
+  async index(req, res) {
+    const { status } = req.query;
+    const missions = await Mission.find({ status: status });
+
+    return res.json(missions);
+
+  },
+
   async store(req, res) {
     const { session, requester, date, reason,
       thecnician, status } = req.body;
