@@ -6,7 +6,7 @@ const MissionSchema = new mongoose.Schema({
   date: String,
   reason: String,
   technician: String,
-  status: Boolean,
+  status: String,
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',

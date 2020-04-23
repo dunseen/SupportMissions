@@ -1,24 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+import api from './services/api';
+
 import './App.css';
+import logo from './assets/distintivo.svg';
 
 function App() {
+  function handleSubmit(e) {
+    e.preventDefault();
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <img src={logo} alt="logo" />
+
+      <div className="content">
+
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="login">Login *</label>
+          <input
+            type="text"
+            id="login"
+            placeholder="Digite seu nome de usuário" />
+
+          <label htmlFor="password">Senha *</label>
+          <input
+            type="password"
+            id="password" />
+
+          <button
+            className="btn"
+            type="submit">Entrar</button>
+        </form>
+      </div>
     </div>
   );
 }

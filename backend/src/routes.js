@@ -1,10 +1,10 @@
 const express = require('express');
-const UserController = require('./controllers/UserController');
-const MissionController = require('./controllers/MissionController');
-const RegisterController = require('./controllers/RegisterController');
-const AuthController = require('./controllers/AuthController');
-const ProjectController = require('./controllers/ProjectController');
-const AuthMiddleware = require('./middlewares/Auth')
+const UserController = require('./app/controllers/UserController');
+const MissionController = require('./app/controllers/MissionController');
+const RegisterController = require('./app/controllers/RegisterController');
+const AuthController = require('./app/controllers/AuthController');
+const ProjectController = require('./app/controllers/ProjectController');
+const AuthMiddleware = require('./app/middlewares/Auth')
 const routes = express.Router();
 
 
