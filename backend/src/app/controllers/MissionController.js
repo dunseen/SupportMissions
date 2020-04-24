@@ -4,8 +4,8 @@ module.exports = {
 
   //Lista os status das missões
   async index(req, res) {
-    const { status } = req.query;
-    const missionStatus = await Mission.find({ status: status });
+    const { user_id } = req.headers;
+    const missionStatus = await Mission.find({ user: user_id });
 
     return res.json(missionStatus);
 
