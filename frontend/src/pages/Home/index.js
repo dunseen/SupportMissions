@@ -11,19 +11,36 @@ export default function Home({ history }) {
   const [missions, setMissions] = useState([]);
   const user_name = localStorage.getItem('user_name');
 
+  const user_id = localStorage.getItem('user_id');
+
+
   useEffect(() => {
     async function loadMissions() {
-      const user_id = localStorage.getItem('user_id');
       const response = await api.get('/missions', {
         headers: { user_id }
       });
-      console.log(response.data)
+
+
 
       setMissions(response.data);
     }
     loadMissions();
+  }, [missions, user_id])
 
-  }, [])
+
+  async function handleDeleteMission(id) {
+
+    try {
+      await localStorage.setItem('missions_id', JSON.stringify(missions.map(mission => (mission._id))));
+      await api.delete(`missions/${id}`)
+      setMissions(missions.filter(missions => missions._id !== id));
+    } catch (err) {
+      alert('Erro ao deletar')
+
+
+    }
+  }
+
   function handleLogout() {
     localStorage.clear()
     history.push('/');
@@ -53,7 +70,11 @@ export default function Home({ history }) {
             <p>Solicitante: {mission.requester}</p><br />
             <p>Problema: {mission.reason}</p><br />
             <p>Data: {mission.date}</p><br />
-
+            <button
+              onClick={() => handleDeleteMission(mission._id)}
+              type="button">
+              <FiTrash2 size={20} color="#a8a8b3"></FiTrash2>
+            </button>
           </li>
 
         ))}

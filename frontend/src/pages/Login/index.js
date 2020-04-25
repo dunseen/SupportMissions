@@ -9,7 +9,6 @@ export default function Login({ history }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-
   async function handleSubmit(e) {
     e.preventDefault();
 

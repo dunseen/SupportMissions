@@ -29,6 +29,7 @@ export default function Register({ history }) {
         headers: { user_id }
       })
 
+
       history.push('/home')
     } else {
       alert('Falha ao registrar, preencha todos os campos !');
