@@ -18,18 +18,35 @@ module.exports = {
 
     const { user_id } = req.headers;
 
-    const mission = await Mission.create({
-      user: user_id,
-      session,
-      requester,
-      date,
-      reason,
-      thecnician,
-      status
+    try {
 
-    })
+      if (
+        session === '' ||
+        requester === '' ||
+        reason === '' ||
+        date === ''
+      ) {
+        return res.status(400).send({ error: "Preencha todos os campos corretamente!" });
 
-    return res.json(mission);
+      }
+
+      const mission = await Mission.create({
+        user: user_id,
+        session,
+        requester,
+        date,
+        reason,
+        thecnician,
+        status
+
+      })
+
+      return res.json(mission);
+
+    } catch (error) {
+      return res.status(400).send({ error: 'Registration mission failed!' });
+
+    }
 
   }
 

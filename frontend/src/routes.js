@@ -5,6 +5,15 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Register from './pages/Register';
 
+/*const PrivateRoute = ({component: Component},...rest) =>{
+  <Route {...rest} render={props =>(
+    
+
+  )} />
+
+}
+*/
+
 export default function Routes() {
   return (
     <BrowserRouter>

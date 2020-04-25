@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
+import logo from '../../assets/distintivo.svg';
+
+import './styles.css';
 
 
 export default function Login({ history }) {
@@ -23,33 +26,40 @@ export default function Login({ history }) {
       await localStorage.setItem('userToken', response.data.token);
       api.defaults.headers.common.Authorization = await response.data.token;
       history.push('/home');
+
     }
 
 
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="login">Login *</label>
-        <input
-          type="email"
-          id="login"
-          placeholder="Digite seu nome de usuário"
-          value={email}
-          onChange={e => setEmail(e.target.value)} />
+    <div className="container">
+      <img src={logo} alt="logo" />
 
-        <label htmlFor="password">Senha *</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)} />
+      <div className="content">
 
-        <button
-          className="btn"
-          type="submit">Entrar</button>
-      </form>
-    </>
+
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="login">Login *</label>
+          <input
+            type="email"
+            id="login"
+            placeholder="Digite seu nome de usuário"
+            value={email}
+            onChange={e => setEmail(e.target.value)} />
+
+          <label htmlFor="password">Senha *</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)} />
+
+          <button
+            className="btn"
+            type="submit">Entrar</button>
+        </form>
+      </div>
+    </div>
   );
 }

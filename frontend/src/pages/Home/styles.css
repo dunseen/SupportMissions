@@ -1,31 +1,64 @@
-ul.missions-list {
+.container-missions {
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-missions .content-missions {
+    width: 100%;
+    padding: 96px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-missions .content-missions section {
+    width: 100%;
+    max-width: 380px;
+    position: absolute;
+}
+
+.container-missions .content-missions section h1 {
+    margin-bottom: 440px;
+    font-size: 24px;
+}
+
+.container-missions .content-missions ul.missions-list {
     width: 100%;
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
-    margin-bottom: 20px;
+    margin-top: 150px;
 }
 
-ul.missions-list li {
+.container-missions .content-missions ul.missions-list li {
     display: flex;
     flex-direction: column;
 }
 
-ul.missions-list li header {
+.container-missions .content-missions ul.missions-list li header {
     width: 100%;
     height: 120px;
     background-size: cover;
     border-radius: 4px;
 }
 
-ul.missions-list li strong {
+.container-missions .content-missions ul.missions-list li strong {
     margin-top: 10px;
     font-size: 24px;
     color: #444;
+    text-align: justify;
 }
 
-ul.missions-list li span {
+.container-missions .content-missions ul.missions-list li span {
     font-size: 15px;
     color: #999;
 }
