@@ -8,9 +8,10 @@ const routes = express.Router();
 
 
 routes.post('/auth', AuthController.store);
-routes.post('/missions', MissionController.store);
-routes.post('/register', RegisterController.store);
 routes.get('/missions', MissionController.index);
+routes.post('/missions', MissionController.store);
+routes.delete('/missions/:id', MissionController.delete);
+routes.post('/register', RegisterController.store);
 routes.get('/project', AuthMiddleware, ProjectController.index);
 
 module.exports = routes;

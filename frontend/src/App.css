@@ -48,6 +48,7 @@ form input {
     font-size: 18px;
     line-height: 60px;
     transition: filter 0.2s;
+    cursor: pointer;
 }
 
 .btn:hover {

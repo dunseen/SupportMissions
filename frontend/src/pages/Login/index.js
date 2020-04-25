@@ -35,8 +35,6 @@ export default function Login({ history }) {
       <img src={logo} alt="logo" />
 
       <div className="content">
-
-
         <form onSubmit={handleSubmit}>
           <label htmlFor="login">Login *</label>
           <input

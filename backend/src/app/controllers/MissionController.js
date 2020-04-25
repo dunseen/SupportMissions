@@ -48,6 +48,25 @@ module.exports = {
 
     }
 
+  },
+  async delete(req, res) {
+
+
+    const missions = await Mission.deleteOne({ _id: req.params.id }, function (err) {
+      if (err) return res.status(400).json({
+        error: true,
+        message: "Error: Não foi possível apagar a missão!"
+      })
+
+      return res.json({
+        error: false,
+        message: "Missão apagada"
+      })
+
+    })
+
+
+
   }
 
 
