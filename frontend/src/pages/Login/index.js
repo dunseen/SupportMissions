@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
-import { toast } from 'react-toastify';
-import logo from '../../assets/distintivo.svg';
+import logo from '../../assets/pmpa.png';
 
 import './styles.css';
 
@@ -10,14 +9,13 @@ export default function Login({ history }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const response = await api.post('/auth', { email, password })
-      .catch(() => {
-        toast.error('Falha na autenticação, verifique seus dados!');
+    const response = await api.post('/auth', { email, password });
+    localStorage.setItem('user_name', response.data.user.name);
 
-      });
     if (response === undefined) {
       alert('Falha no login, verifique seus dados.')
     } else if (await (response.data.token !== '')) {

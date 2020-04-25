@@ -34,10 +34,9 @@
 .container-register .content-register section {
     width: 100%;
     max-width: 380px;
-    position: absolute;
+    position: relative;
 }
 
 .container-register .content-register section h1 {
-    bottom: 20%;
     font-size: 24px;
 }
