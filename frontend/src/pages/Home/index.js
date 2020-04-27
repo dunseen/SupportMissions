@@ -63,7 +63,7 @@ export default function Home({ history }) {
         </button>
       </header>
       <h1>Missões em Aberto</h1>
-      <ul className="missions-list">
+      <ul className="missions-list" id="missions-open">
         {missions.map(mission => (
           <li key={mission._id}>
             <strong>Seção: {mission.session}</strong><br />
@@ -78,6 +78,20 @@ export default function Home({ history }) {
           </li>
 
         ))}
+      </ul>
+      <h1 id="mission-title">Missões em Andamento</h1>
+      <ul className="missions-list" id="missions-incourse">
+        <li>
+          <strong>Seção: Estático</strong><br />
+          <p>Solicitante: Estático</p><br />
+          <p>Problema: Estático</p><br />
+          <p>Data: Estático</p><br />
+          <button
+            onClick={() => handleDeleteMission()}
+            type="button">
+            <FiTrash2 size={20} color="#a8a8b3"></FiTrash2>
+          </button>
+        </li>
       </ul>
     </div>
 

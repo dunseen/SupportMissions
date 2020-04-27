@@ -3,6 +3,7 @@
     max-width: 1180px;
     padding: 0 30px;
     margin: 32px auto;
+    justify-content: space-between;
 }
 
 .missions-container header {
@@ -63,21 +64,36 @@
     margin-bottom: 24px;
 }
 
+.missions-container h1#mission-title {
+    margin-top: -60px;
+    margin-bottom: 0;
+    float: right;
+}
+
 .missions-container ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 24px;
     list-style: none;
+    float: left;
 }
 
-.missions-container ul li {
+.missions-container ul#missions-incourse {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 24px;
+    list-style: none;
+    float: right;
+}
+
+.missions-container ul.missions-list li {
     background: #fff;
     padding: 24px;
     border-radius: 8px;
     position: relative;
 }
 
-.missions-container ul li button {
+.missions-container ul.missions-list li button {
     position: absolute;
     right: 24px;
     top: 24px;
@@ -88,14 +104,14 @@
     opacity: 0.8;
 }
 
-.missions-container ul li strong {
+.missions-container ul.missions-list li strong {
     display: block;
     font-size: 20px;
     margin-bottom: 16px;
     color: #41414d;
 }
 
-.missions-container ul li p {
+.missions-container ul.missions-list li p {
     color: #737380;
     line-height: 21px;
     font-size: 16px;
