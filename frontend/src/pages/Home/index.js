@@ -40,6 +40,10 @@ export default function Home({ history }) {
 
     }
   }
+  function handlePosition() {
+
+    alert("Passou")
+  }
 
   function handleLogout() {
     localStorage.clear()
@@ -70,6 +74,10 @@ export default function Home({ history }) {
             <p>Solicitante: {mission.requester}</p><br />
             <p>Problema: {mission.reason}</p><br />
             <p>Data: {mission.date}</p><br />
+            <button
+              type="button"
+              className="btn"
+              onClick={() => handlePosition()}>Selecionar</button>
             <button
               onClick={() => handleDeleteMission(mission._id)}
               type="button">
